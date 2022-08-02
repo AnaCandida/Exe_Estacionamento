@@ -91,6 +91,7 @@ class Vaga:
 class Estacionamento():
  
     vagas_em_uso = []
+    count = 0
     
     def __init__(self):
         self.total_vagas = 10
@@ -115,13 +116,11 @@ class Estacionamento():
 
         for x  in Estacionamento.vagas_em_uso:
             try:
-
                 find = veiculo.placa in x
                 if find:
                     index = Estacionamento.vagas_em_uso.index(x)
                     self.vagas_em_uso.remove(x)
                     return print(f'Retirando veiculo {veiculo.placa}')
-                    
                     
             except Exception as e:
                 print('não está no estacionamento')
@@ -150,29 +149,27 @@ class Estacionamento():
 
         message1 = f'\n Vagas ocupadas: {total_ocupadas} Vagas livres: {total_livres} '
 
-        return ( '----LOTADO!----' + message1) if total_ocupadas == 50 else ( '----TEMOS VAGAS----' + message1)
+        message2 = f' Veiculos aguardando para estacionar: {self.total_vagas}'
+
+
+        return ( '----LOTADO!----' + message2 + message1 ) if total_ocupadas == self.total_vagas else ( '----TEMOS VAGAS----' + message1)
+
 
 
 e = Estacionamento()
 v = Vaga()
-carro = Carro(6565)
-carro1 = Carro(8080)
-carro2 = Carro(1212)
 
-moto = Moto(8989)
+carroAna = Carro(1212)
+carroBia = Carro(5050)
 
-e.estacionar(carro)
-e.estacionar(moto)
+e.estacionar(carroAna)
+e.estacionar(carroBia)
 
-e.estacionar(carro1)
-e.estacionar(carro2)
-e.estado_do_estacionamento()
-e.remover(carro)
-e.estado_do_estacionamento()
-e.remover(carro1)
-e.remover(moto)
 e.estado_do_estacionamento()
 
+e.remover(carroAna)
+
+e.estado_do_estacionamento()
 
 
 
