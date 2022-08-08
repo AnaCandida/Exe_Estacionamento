@@ -1,7 +1,6 @@
 
 # Problema_estacionamento
-Problema do estacionamento em python com POO.
-Curso: Instruct the woman  (WoMakersCode/Instruct)
+Problema do estacionamentoem realizado como desafio dentro da matéria de POO com python do curso: Instruct the woman  (WoMakersCode/Instruct).
 
 
 ![enter image description here](https://cdn.discordapp.com/attachments/989154814422319164/1005994741663539280/unknown.png)
